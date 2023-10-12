@@ -624,6 +624,112 @@ public class Main {
         return flag;
     }
 
+    public static int[][] createZAFFlag(int height, int width) {
+        int[][] flag = new int[height][width];
+        int rowInt = 0;
+        int rowEnd = 0;
+        int cellInt = 0;
+        int cellEnd = 0;
+
+        rowInt = 0;
+        rowEnd = (int) (height * 0.35);
+        cellInt = 0;
+        cellEnd = width;
+
+        for (int row = rowInt; row < rowEnd; row++) {
+            for (int cell = cellInt; cell < cellEnd; cell++) {
+                flag[row][cell] = COLOR_RED;
+            }
+        }
+
+        rowInt = rowEnd;
+        rowEnd = (int) (height * 0.7);
+        cellInt = 0;
+        cellEnd = width;
+
+        for (int row = rowInt; row < rowEnd; row++) {
+            for (int cell = cellInt; cell < cellEnd; cell++) {
+                flag[row][cell] = COLOR_WHITE;
+            }
+        }
+
+        rowInt = rowEnd;
+        rowEnd = height;
+        cellInt = 0;
+        cellEnd = width;
+
+        for (int row = rowInt; row < rowEnd; row++) {
+            for (int cell = cellInt; cell < cellEnd; cell++) {
+                flag[row][cell] = COLOR_BLUE;
+            }
+        }
+
+        rowInt = 0;
+        rowEnd = (int) (height * 0.5);
+        cellInt = 0;
+        cellEnd = 1;
+
+        for (int row = rowInt; row < rowEnd; row++) {
+            cellEnd++;
+            for (int cell = cellInt; cell < cellEnd; cell++) {
+                flag[row][cell] = COLOR_WHITE;
+                flag[height - 1 - row][cell] = COLOR_WHITE;
+            }
+        }
+
+        rowInt = 0;
+        rowEnd = (int) (height * 0.5);
+        cellInt = 0;
+        cellEnd = 0;
+
+        for (int row = rowInt; row < rowEnd; row++) {
+            cellEnd++;
+            for (int cell = cellInt; cell < cellEnd; cell++) {
+                flag[row][cell] = COLOR_GREEN;
+                flag[height - 1 - row][cell] = COLOR_GREEN;
+            }
+        }
+
+        rowInt = (int) (height * 0.5) - 1;
+        rowEnd = rowInt + 2;
+        cellInt = 0;
+        cellEnd = width;
+
+        for (int row = rowInt; row < rowEnd; row++) {
+            for (int cell = cellInt; cell < cellEnd; cell++) {
+                flag[row][cell] = COLOR_GREEN;
+            }
+        }
+
+        rowInt = 2;
+        rowEnd = (int) (height * 0.5);
+        cellInt = 0;
+        cellEnd = 0;
+
+        for (int row = rowInt; row < rowEnd; row++) {
+            cellEnd++;
+            for (int cell = cellInt; cell < cellEnd; cell++) {
+                flag[row][cell] = COLOR_YELLOW;
+                flag[height - 1 - row][cell] = COLOR_YELLOW;
+            }
+        }
+
+        rowInt = 3;
+        rowEnd = (int) (height * 0.5);
+        cellInt = 0;
+        cellEnd = 0;
+
+        for (int row = rowInt; row < rowEnd; row++) {
+            cellEnd++;
+            for (int cell = cellInt; cell < cellEnd; cell++) {
+                flag[row][cell] = COLOR_BLACK;
+                flag[height - 1 - row][cell] = COLOR_BLACK;
+            }
+        }
+
+        return flag;
+    }
+
     public static void main(String[] args) {
         int [][] flag = {};
 
@@ -651,7 +757,7 @@ public class Main {
         flag = createVENFlag(24, 40);
         JOptionPaneArrays.showColorArray2D(null, flag);*/
 
-        flag = createKWTFlag(24, 40);
+        flag = createZAFFlag(24, 40);
         JOptionPaneArrays.showColorArray2D(null, flag);
     }
 

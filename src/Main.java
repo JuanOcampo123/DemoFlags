@@ -201,46 +201,6 @@ public class Main {
         return flag;
     }
 
-    /*public static int[][] createCZEFlag(int height, int width) {
-        int[][] flag = new int[height][width];
-
-        int rowIni = 0;
-        int rowEnd = (int)(height*0.50);
-        int cellIni = 0;
-        int cellEnd = (int)(width);
-
-        for (int row = rowIni; row < rowEnd; row++){
-            for (int cell = cellIni; cell < row ; cell++){
-                flag[row][cell] = COLOR_BLUE;
-            }
-        }
-
-
-        rowIni = 0;
-        rowEnd = (int)(height*0.50);
-        cellIni = (int)(width*0.33);
-        cellEnd = (int)(width);
-
-        for (int row = rowIni; row < rowEnd; row++){
-            for (int cell = cellIni; cell < cellEnd ; cell++){
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-
-        rowIni = (int)(height*0.50);
-        rowEnd = (int)(height);
-        cellIni = 0;
-        cellEnd = (int)(width);
-
-        for (int row = rowIni; row < rowEnd; row++){
-            for (int cell = cellIni; cell < cellEnd ; cell++){
-                flag[row][cell] = COLOR_RED;
-            }
-        }
-
-        return flag;
-    }*/
-
     public static int[][] createCZEFlag(int height, int width) {
         int[][] flag = new int[height][width];
 
@@ -568,7 +528,7 @@ public class Main {
         rowIni = 0;
         rowEnd = (int) (height * 0.35);
         cellIni = 0;
-        cellEnd = (int) (width*0.24);
+        cellEnd = (int) (width*0.25);
 
         for (int row = rowIni; row < rowEnd; row++) {
             for (int cell = cellIni; cell < row + 1; cell++) {
@@ -601,7 +561,7 @@ public class Main {
         rowIni = (int) (height * 0.34);
         rowEnd = (int) (height * 0.67);
         cellIni = 0;
-        cellEnd = (int) (width*0.24);
+        cellEnd = (int) (width*0.25);
 
         for (int row = rowIni; row < rowEnd; row++) {
             for (int cell = cellIni; cell < cellEnd; cell++) {
@@ -612,7 +572,7 @@ public class Main {
         rowIni = (int) (height * 0.68);
         rowEnd = (int) (height);
         cellIni = 0;
-        cellEnd = (int)(width*0.24);
+        cellEnd = (int)(width*0.25);
 
         for (int row = rowIni; row < rowEnd; row++) {
             for (int cell = cellIni; cell < cellEnd-1; cell++) {
@@ -733,32 +693,9 @@ public class Main {
     public static void main(String[] args) {
         int [][] flag = {};
 
-        /*flag = createCOLFlag(12,20);
+        flag = createKWTFlag(12,20);
         JOptionPaneArrays.showColorArray2D(null, flag);
 
-        flag = createCOLFlag(12, 40);
-        JOptionPaneArrays.showColorArray2D(null, flag);
-
-        flag = createCOLFlag(24, 20 );
-        JOptionPaneArrays.showColorArray2D(null, flag);
-
-        flag = createCOLFlag(24, 40);
-        JOptionPaneArrays.showColorArray2D(null, flag);
-
-        flag = createVENFlag(12,20);
-        JOptionPaneArrays.showColorArray2D(null, flag);
-
-        flag = createVENFlag(12, 40);
-        JOptionPaneArrays.showColorArray2D(null, flag);
-
-        flag = createVENFlag(24, 20 );
-        JOptionPaneArrays.showColorArray2D(null, flag);
-
-        flag = createVENFlag(24, 40);
-        JOptionPaneArrays.showColorArray2D(null, flag);*/
-
-        flag = createZAFFlag(24, 40);
-        JOptionPaneArrays.showColorArray2D(null, flag);
     }
 
 
